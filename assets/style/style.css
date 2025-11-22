@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+  .ml-40 {
+    margin-left: 0;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .w-250, .h-180 {
+    width: 100%;
+    height: auto;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
