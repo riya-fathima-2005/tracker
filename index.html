@@ -1,122 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker 1.0</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="Assets/Css/tracker.css">
 </head>
 
-<body class="bg-gray-200">  <!-- 👈 this line adds overall grey background -->
+<body class="bg-gray-200">
 
-    <section class="overflow-auto">
-        <div class="bg-white pb-10 border border-black-200 shadow-2xl rounded-3xl w-250 ml-40 h-180 mt-8">
+<section class="overflow-auto">
+<div class="bg-white pb-10 border border-black-200 shadow-2xl rounded-3xl w-250 ml-40 h-180 mt-8">
 
-            <!-- heading -->
-            <div class="mt-2">
-                <h1 class="text-5xl mt-6 text-yellow-600 font-medium text-center">Expense Tracker 1.0</h1>
+    <h1 class="text-5xl mt-6 text-yellow-600 font-medium text-center">Expense Tracker 1.0</h1>
 
-                <div class="mt-10">
-                    <div class="flex flex-col md:flex-row gap-10 justify-center">
+    <div class="mt-10 flex flex-col md:flex-row gap-10 justify-center">
 
-                        <!-- expenses -->
-                        <div class="bg-black text-center bg-opacity-40 rounded-2xl text-white w-100 backdrop-blur-lg shadow-lg p-5">
-                            <p class="text-yellow-600 text-2xl mb-5"><b>Added Expenses</b></p>
+        <!-- LEFT SIDE -->
+        <div class="bg-black text-center bg-opacity-40 rounded-2xl text-white w-100 backdrop-blur-lg shadow-lg p-5">
+            <p class="text-yellow-600 text-2xl mb-5"><b>Added Expenses</b></p>
 
-                            <div class="border border-solid p-4 rounded">
-                                <p class="text-yellow-200 text-lg">Expense Name: <b>Groceries</b></p>
-                                <p class="text-yellow-200">Expense Amount: <b>10000 /-</b></p>
+            <!-- Expense List -->
+            <div id="expenseList" class="border border-solid p-4 rounded text-left">
 
-                                <p class="text-yellow-200 mt-5">Expense Name: <b>Jewelry</b></p>
-                                <p class="text-yellow-200">Expense Amount: <b>5000 /-</b></p>
-
-                                <p class="text-yellow-200 mt-5">Expense Name: <b>Clothes</b></p>
-                                <p class="text-yellow-200">Expense Amount: <b>7000 /-</b></p>
-                            </div>
-
-                            <table class="mt-6 border border-white text-left ">
-                                <tr class="bg-yellow-800 text-white">
-                                    <th class="py-3 px-3">Date</th>
-                                    <th class="py-3 px-2">Category</th>
-                                    <th class="py-3 px-2">Income</th>
-                                    <th class="py-3 px-3">Expenses</th>
-                                </tr>
-
-                                <tr>
-                                    <td class="py-2 px-2">01/05/2017</td>
-                                    <td class="py-2 px-2" >Bill</td>
-                                    <td class="py-2 px-2">Utilities</td>
-                                    <td class="py-2 px-2">$400.00</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="py-2 px-3">03/05/2017</td>
-                                    <td class="py-2 px-3">Misc</td>
-                                    <td class="py-2 px-3">Dinner</td>
-                                    <td class="py-2 px-3">$80.00</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="py-2 px-3">20/05/2017</td>
-                                    <td class="py-2 px-3">Bills</td>
-                                    <td class="py-2 px-3">Rent</td>
-                                    <td class="py-2 px-3">$800.00</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="py-2 px-3">27/05/2017</td>
-                                    <td class="py-2 px-3">Misc</td>
-                                    <td class="py-2 px-3">Movies</td>
-                                    <td class="py-2 px-3">$80.00</td>
-                                </tr>
-                            </table>
-                        </div>
-
-                        <!-- total-budget -->
-                        <div class="bg-black bg-opacity-40 p-10 rounded-2xl text-white w-100 max-w-5xl backdrop-blur-sm shadow-lg">
-                            <p class="text-yellow-600 text-2xl"><b>Total Budget: 1,60,000/-</b></p>
-                            <p class="text-yellow-600 text-2xl mt-4"><b>Current Balance: 80,000/-</b></p>
-
-                            <p class="text-yellow-600 text-2xl mt-10"><b>Add Money To Budget:</b></p>
-
-                            <div class="w-65 mt-3 p-2 rounded-sm bg-white text-black">
-                                60000 
-                                <button class="ml-28 hover:text-yellow-700 text-black">Add Money</button>
-                            </div>
-
-                            <p class="text-yellow-600 text-2xl mt-10"><b>Add Expenses:</b></p>
-                            <form>
-                                <label>Description: 
-                                    <input type="text" class="bg-black border-2 border-solid p-1 rounded ml-2" placeholder="Rent">
-                                </label>
-
-                                <br>
-                                <label class="mt-3 block">Amount: 
-                                    <input type="text" class="bg-black border-2 border-solid p-1 rounded ml-2" placeholder="7000">
-                                </label>
-
-                                <br>
-                                <label class="mt-3 block">Date: 
-                                    <input type="date" class="bg-black border-2 border-solid p-1 rounded ml-2">
-                                </label>
-
-                                <br>
-                                <button class="border border-white p-2 mt-5 rounded hover:bg-white text-yellow-500">Add Transaction</button>
-                            </form>
-                        </div>
-
-                    </div>
+                <!-- DEFAULT EXPENSES -->
+                <div class="mt-3 p-3 border border-yellow-600 rounded">
+                    <p class="text-yellow-200">Expense Name: <b>Groceries</b></p>
+                    <p class="text-yellow-200">Amount: <b>10000 /-</b></p>
                 </div>
+
+                <div class="mt-3 p-3 border border-yellow-600 rounded">
+                    <p class="text-yellow-200">Expense Name: <b>Jewelry</b></p>
+                    <p class="text-yellow-200">Amount: <b>5000 /-</b></p>
+                </div>
+
+                <div class="mt-3 p-3 border border-yellow-600 rounded">
+                    <p class="text-yellow-200">Expense Name: <b>Clothes</b></p>
+                    <p class="text-yellow-200">Amount: <b>7000 /-</b></p>
+                </div>
+
             </div>
         </div>
-    </section>
 
-<<<<<<< HEAD
+        <!-- RIGHT SIDE -->
+        <div class="bg-black bg-opacity-40 p-10 rounded-2xl text-white w-100 max-w-5xl backdrop-blur-sm shadow-lg">
+
+            <p class="text-yellow-600 text-2xl"><b>Total Budget: 1,60,000/-</b></p>
+
+            <p class="text-yellow-600 text-2xl mt-4">
+                <b>Current Balance: <span id="currentBalance">80000</span>/-</b>
+            </p>
+
+            <p class="text-yellow-600 text-2xl mt-10"><b>Add Expenses:</b></p>
+
+            <form onsubmit="addTransaction(event)">
+                <label>Description:
+                    <input type="text" id="expenseName" class="bg-black border-2 border-solid p-1 rounded ml-2" placeholder="Rent">
+                </label><br>
+
+                <label class="mt-3 block">Amount:
+                    <input type="text" id="expenseAmount" class="bg-black border-2 border-solid p-1 rounded ml-2" placeholder="7000">
+                </label><br>
+
+                <label class="mt-3 block">Date:
+                    <input type="date" id="expenseDate" class="bg-black border-2 border-solid p-1 rounded ml-2">
+                </label><br>
+
+                <button class="border border-white p-2 mt-5 rounded hover:bg-white text-yellow-500">
+                    Add Transaction
+                </button>
+            </form>
+
+        </div>
+
+    </div>
 </div>
-=======
->>>>>>> d94bac204519dce013b02a510688ca637bfb8589
-</body>
+</section>
 
+<!-- JS -->
+<script>
+function addTransaction(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("expenseName").value;
+    let amount = Number(document.getElementById("expenseAmount").value);
+    let date = document.getElementById("expenseDate").value;
+    let balanceEl = document.getElementById("currentBalance");
+
+    if (!name || !amount || !date) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    // Update Balance
+    let balance = Number(balanceEl.innerText) - amount;
+    balanceEl.innerText = balance;
+
+    // Add NEW Expense Box
+    let box = document.createElement("div");
+    box.className = "mt-3 p-3 border border-yellow-600 rounded";
+
+    box.innerHTML = `
+        <p class="text-yellow-200">Expense Name: <b>${name}</b></p>
+        <p class="text-yellow-200">Amount: <b>${amount} /-</b></p>
+        <p class="text-yellow-200">Date: ${date}</p>
+    `;
+
+    document.getElementById("expenseList").appendChild(box);
+
+    // Clear Inputs
+    document.getElementById("expenseName").value = "";
+    document.getElementById("expenseAmount").value = "";
+    document.getElementById("expenseDate").value = "";
+}
+</script>
+
+</body>
 </html>
